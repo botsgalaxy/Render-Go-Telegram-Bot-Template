@@ -8,4 +8,5 @@ import (
 
 func addHandlers(d *ext.Dispatcher) {
 	d.AddHandler(handlers.NewCommand("start", modules.Start))
+	d.AddHandler(handlers.NewCommand("ping", modules.Ping))
 }

@@ -13,7 +13,9 @@ func Start(b *gotgbot.Bot, ctx *ext.Context) error {
 	chatId := ctx.EffectiveChat.Id
 	text := fmt.Sprintf(`👋 Heya <b>%s</b>,
 	
-	✅ This is a sample bot running on render.com`, user.FirstName)
+	✅ This is a sample bot running on <a href="https://render.com">
+	☁️ Render.com</a>
+	📶 /ping to check response latency`, user.FirstName)
 	button := gotgbot.InlineKeyboardMarkup{
 		InlineKeyboard: [][]gotgbot.InlineKeyboardButton{
 			{
@@ -32,6 +34,9 @@ func Start(b *gotgbot.Bot, ctx *ext.Context) error {
 		&gotgbot.SendMessageOpts{
 			ParseMode:   "html",
 			ReplyMarkup: button,
+			LinkPreviewOptions: &gotgbot.LinkPreviewOptions{
+				IsDisabled: true,
+			},
 		},
 	)
 	telegramUser := database.TelegramUser{

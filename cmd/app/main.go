@@ -51,7 +51,7 @@ func main() {
 	addHandlers(dispatcher)
 
 	webhookOpts := ext.WebhookOpts{
-		ListenAddr:  "localhost:" + port,
+		ListenAddr:  "0.0.0.0:" + port,
 		SecretToken: webhookSecret,
 	}
 

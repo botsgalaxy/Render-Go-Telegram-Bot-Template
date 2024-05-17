@@ -14,7 +14,7 @@
 - `DSN`: Your database DSN for GORM.
 
 ### Render 
-- BuildCommand : `go build -tags netgo -ldflags '-s -w' -o app`
+- BuildCommand : `go build -tags netgo -ldflags '-s -w' -o app ./cmd/app`
 - StartCommand : `./app`
 
 
